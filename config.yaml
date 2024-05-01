@@ -1,0 +1,9 @@
+AWS_ACCESS:
+  AWS_ACCESS_KEY_ID: <aws_access_key>
+  AWS_SECRET_ACCESS_KEY: <aws_access_key_secret>
+  S3_BUCKET_NAME: <s3_image_stored_bucket_name>
+DETECTION:
+  MODEL_PATH: "./crowdhuman_yolov5m.pt"
+  CONF_THRESH: 0.25
+  IOU_THRESH: 0.55 # standard 0.45
+  IMG_SIZE: 640
