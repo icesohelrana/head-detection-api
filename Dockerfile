@@ -21,7 +21,7 @@ WORKDIR /head-detection
 COPY . /head-detection
 # EXPOSE 5000
 
-ENTRYPOINT ["python", "/head-detection/single_image_inference.py"]
+ENTRYPOINT ["python", "/head-detection/inference.py"]
 # Copy weights
 #RUN python3 -c "from models import *; \
 #attempt_download('weights/yolov5s.pt'); \
