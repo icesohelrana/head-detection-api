@@ -2,13 +2,16 @@ import boto3
 import cv2
 import numpy as np
 class S3:
-	def __init__(self,s3_config):
+	def __init__(self,):
 		try:
+			aws_access_key_id = os.getenv('AWS_ACCESS_KEY_ID')
+			aws_secret_access_key = os.getenv('AWS_SECRET_ACCESS_KEY')
+			
 			self.s3_client = boto3.client('s3', aws_access_key_id=s3_config["AWS_ACCESS_KEY_ID"], 
 							aws_secret_access_key=s3_config["AWS_SECRET_ACCESS_KEY"])
 		except:
 			print('s3 bucket connection failed')
-		self.bucket_name = s3_config["S3_BUCKET_NAME"]
+		self.bucket_name = os.get_env('AWS_BUCKET_NAME')
 	def upload_frame_to_s3(self,frame,upload_path):
 				# Encode frame as PNG (you can choose other formats)
 

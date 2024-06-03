@@ -12,7 +12,11 @@ Step 1: Build the docker container of model API
 
 Step 2: Run the docker container for head detection.
 
-    sudo docker run --restart=always -p 5000:5000 head-detection -d
+    sudo docker run --restart=always  
+    -e AWS_ACCESS_KEY_ID=<aws_access_key_id>
+    -e AWS_SECRET_ACCESS_KEY=<aws_secret_key_id>
+    -e AWS_BUCKET_NAME=<s3_bucket_name_of_images>
+    -p 5000:5000 head-detection -d
 
 Step 3: Test the API. 
 
